@@ -1,54 +1,60 @@
-# 🏗️ System Architecture – Telex Monetization & AI Credit System
+# System Architecture — Telex Monetization & AI Credit System
+
+## 🧩 Overview
+The architecture of the Telex Monetization & AI Credit System is built for **scalability**, **security**, and **modularity**.  
+It connects **frontend**, **backend**, **database**, and **third-party services** (Telex Core AI, Paystack, Stripe) through secure API calls.
 
 ---
 
-## 🧠 Overview
-This document details the **technical structure and architecture** of the Telex Monetization & AI Credit System.  
-It outlines how each component communicates within the Telex ecosystem and ensures scalability, performance, and reliability.
+## 🏗️ Architecture Components
+
+### 1. Frontend (React + TailwindCSS)
+- Built with **React.js** for dynamic user interfaces.
+- Uses **Axios** for API communication.
+- Displays:
+  - Credit balances
+  - Transaction history
+  - Developer earnings
+  - Purchase modals for credits
+
+### 2. Backend (Node.js + Express.js)
+- Handles business logic, authentication, and communication between frontend, database, and third-party APIs.
+- Key endpoints:
+  - `/api/credits/buy` — Handles payment initiation.
+  - `/api/credits/deduct` — Deducts credits per AI usage.
+  - `/api/developers/payout` — Processes developer revenue.
+- Uses **JWT** for authentication and role-based access control.
+
+### 3. Database (MongoDB)
+- Stores all user, transaction, and developer data.
+- Core Collections:
+  - `Users` — user profiles, balances
+  - `Transactions` — payment and usage logs
+  - `Developers` — registered AI service providers
+  - `Credits` — balances and deduction records
+
+### 4. Payment Gateways
+- **Paystack** (for local/Nigerian users)
+- **Stripe** (for global users)
+- Integrated via backend APIs using secure keys and webhooks.
+- All transactions are verified and logged in the database.
+
+### 5. AI Service Integration (Telex Core APIs)
+- The backend communicates with Telex Core APIs.
+- Credit deduction occurs before each AI request.
+- Provides standardized endpoints for all AI modules to consume credits uniformly.
 
 ---
 
-## 🧩 System Components
-
-### 1️⃣ Frontend
-- **Technology:** React.js + TailwindCSS + TypeScript  
-- **Purpose:** Provides users with dashboards for wallet management, AI credit history, and top-up interface.  
-- **Key Modules:**
-  - Wallet Overview
-  - Top-Up Portal
-  - Usage Analytics
-  - Referral Rewards
-
----
-
-### 2️⃣ Backend
-- **Technology:** Node.js (Express.js Framework)
-- **Purpose:** Handles API requests, payment verification, and AI credit logic.
-- **Responsibilities:**
-  - User authentication (JWT)
-  - Credit deduction and tracking
-  - Payment webhook handling
-  - Reward distribution logic
-  - Communication with Telex Core APIs
-
----
-
-### 3️⃣ Database Layer
-- **Database:** MongoDB  
-- **Collections:**
-  - `users`
-  - `transactions`
-  - `credits`
-  - `usage_logs`
-  - `referrals`
-- **Data Storage Model:** Document-based, enabling flexible schema for transactions and usage logs.
-
----
-
-## 🔗 Communication Flow
-```plaintext
-Frontend (React) ⇄ Backend (Express API) ⇄ MongoDB
-                           ↓
-                 Telex Core Services (AI APIs)
-                           ↓
-                  Payment Gateway (Paystack/Stripe)
+## 🔄 Communication Flow
+```mermaid
+sequenceDiagram
+User ->> Frontend: Request AI Service
+Frontend ->> Backend: Send API Call + Auth Token
+Backend ->> MongoDB: Verify user & credit balance
+Backend ->> Payment API: If needed, initiate purchase
+Backend ->> Telex Core API: Send AI Request
+Telex Core API ->> Backend: Return AI Response
+Backend ->> MongoDB: Deduct credits & log usage
+Backend ->> Frontend: Return AI Output + Updated Balance
+Frontend ->> User: Display AI Response & Usage Stats
