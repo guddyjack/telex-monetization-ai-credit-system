@@ -1,88 +1,78 @@
-# 💳 Telex Monetization & AI Credit System
+# Telex Monetization & AI Credit System
 
-### Empowering Productivity Through Smarter Credit Usage
-
----
-
-## 🧠 Overview
-The **Telex Monetization & AI Credit System** introduces a new way for Telex users to **earn, purchase, and manage credits** for accessing AI-powered tools and premium features—bringing sustainable monetization to the Telex ecosystem.
-
-This module provides a **flexible, transparent credit-based economy**, giving both individual and enterprise users control over how they consume Telex AI services, just like Slack’s credit and billing model — but smarter, more accessible, and data-driven.
+## 🌍 Overview
+The **Telex Monetization & AI Credit System** introduces a new way for developers and users to interact with Telex’s AI-powered features through a transparent and flexible **credit-based model**.  
+This system allows developers to **earn** from their integrations and enables users to **pay-as-they-use** AI features — making the Telex ecosystem more sustainable and scalable.
 
 ---
 
-## 🎯 Why It Matters
-AI-driven collaboration platforms are growing fast, but users struggle with:
-- **Unclear usage billing** (hidden costs and unpredictable limits)
-- **Limited monetization opportunities** for workspace owners
-- **Lack of reward systems** that encourage platform engagement
+## 🚀 What It Does
+- Allows users to **purchase AI credits** using integrated payment gateways (Paystack & Stripe).  
+- Tracks credit usage across different Telex AI endpoints.  
+- Enables developers to **earn revenue** based on the consumption of their AI modules.  
+- Provides a **dashboard** for viewing balances, transactions, and usage statistics.  
+- Ensures **secure transactions** and transparent credit deductions per API call.
 
-The Telex Monetization & AI Credit System solves this by:
-✅ Introducing **clear AI credit pricing**
-✅ Enabling **users to earn or top-up credits easily**
-✅ Rewarding engagement with **bonus and referral credits**
-✅ Allowing **admins to track and allocate usage across teams**
+---
+
+## 💡 Why It Matters
+AI services can be expensive and hard to scale sustainably.  
+With the AI Credit System:
+- **Users** only pay for what they use.
+- **Developers** can monetize their innovations directly.
+- **Telex** creates a unified billing and tracking ecosystem that encourages more integrations and fair compensation.
 
 ---
 
 ## 👥 Who It’s For
-- **Individual Users:** Freelancers, students, and professionals who use AI tools within Telex.  
-- **Team Leads & Workspace Admins:** Who want visibility and control over AI usage across their teams.  
-- **Developers & Module Creators:** Who can monetize their features through the AI credit system.  
+- **Developers** building AI features within Telex.
+- **Product Managers** monitoring credit-based usage analytics.
+- **End Users** who want seamless access to AI services without subscription fatigue.
 
 ---
 
-## ⚙️ Key Features
-- **Credit Wallet:** Users have a virtual wallet showing available AI credits.
-- **AI Usage Tracking:** Each AI action deducts credits dynamically.
-- **Top-Up System:** Multiple payment gateways (Paystack, Stripe) integrated for purchasing credits.
-- **Referral Rewards:** Users earn bonus credits through referrals.
-- **Usage Analytics Dashboard:** Track consumption trends and predict top-ups.
-- **Developer Integration API:** Allow third-party modules to plug into the credit system.
+## 🔑 Key Features
+- 💳 **Flexible Credit Purchase:** Users can buy credits via Paystack or Stripe.  
+- 🧮 **Usage-Based Billing:** AI requests automatically deduct credits.  
+- 📊 **Dashboard Analytics:** Real-time balance, usage, and developer earnings.  
+- 🧠 **Integration SDK:** APIs and SDKs for developers to manage credit transactions.  
+- 🔐 **Security Layer:** Token-based authentication and secure payment flows.
 
 ---
 
-## 🧩 Technologies Used
-| Layer | Technology |
-|--------|-------------|
-| Frontend | React.js, TailwindCSS, TypeScript |
-| Backend | Node.js, Express.js |
-| Database | MongoDB |
-| API Layer | REST API + JSON |
-| Authentication | JWT (JSON Web Token) |
-| Payments | Paystack / Stripe API |
-| AI Services | Telex AI Core API |
+## 🧰 Tech Stack
+- **Frontend:** React + TailwindCSS  
+- **Backend:** Node.js (Express.js)  
+- **Database:** MongoDB (Mongoose ORM)  
+- **Payments:** Paystack & Stripe APIs  
+- **Hosting:** Vercel (Frontend), Render (Backend)  
+- **AI Engine:** Telex Core APIs
 
 ---
 
-## 🪄 How It Works (Simple Flow)
-1. **User logs into Telex**  
-2. **Navigates to AI Credit Dashboard**  
-3. **Performs AI action (e.g., message summarization)**  
-4. **Credits are automatically deducted**  
-5. **Low balance alert → Prompt top-up**  
-6. **Payment → Credit Wallet updated**
+## 🧭 How It Works (Simplified Flow)
+1. User logs into Telex and opens the AI Marketplace.
+2. They purchase credits using Paystack/Stripe.
+3. When an AI feature is used, credits are deducted via the backend API.
+4. Developers earn based on how much their features are consumed.
+5. Users and developers can track transactions on the dashboard.
 
 ---
 
-## 🗺️ Roadmap
-- [x] Credit wallet setup
-- [x] Payment gateway integration
-- [ ] Gamified referral system
-- [ ] Analytics and prediction engine
-- [ ] Integration with Telex API for module developers
+## 🤝 Contributing
+1. Fork the repo  
+2. Create your feature branch (`git checkout -b feature/new-feature`)  
+3. Commit your changes (`git commit -m 'Added new feature'`)  
+4. Push to the branch (`git push origin feature/new-feature`)  
+5. Open a Pull Request 🚀  
 
 ---
 
-## 📸 Optional Visuals
-(Add mock UI screenshots or architecture diagram here)
+## 🧑‍💻 Authors
+- **Ofonmbuk Jackson** — Product Manager  
+- **Telex Developer Team**
 
 ---
 
-## 💬 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
-
----
-
-## 🧾 License
-MIT License © 2025 Telex Team
+## 📜 License
+MIT License © 2025 Telex
